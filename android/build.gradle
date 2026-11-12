@@ -1,0 +1,74 @@
+// Android side of @moonetix/react-native-offerwall: a small module on top of the Moonetix Android SDK
+// (com.moonetix:offerwall), which is served from the Moonetix Maven repository.
+
+def safeExtGet(String prop, fallback) {
+    return rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+def isNewArchitectureEnabled() {
+    return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
+}
+
+def moonetixMavenUrl = "https://moonetix.com/maven"
+
+// The app resolves this module's dependencies with its own repositories, so the Moonetix repository
+// is added to every project, limited to the com.moonetix group. React Native's Gradle plugin adds its
+// own repositories (Maven Central, Google) to every project in the same way.
+rootProject.allprojects { p ->
+    def present = p.repositories.find {
+        it instanceof MavenArtifactRepository && it.url.toString().replaceAll("/+\$", "") == moonetixMavenUrl
+    }
+    if (present == null) {
+        p.repositories.maven {
+            name = "MoonetixMaven"
+            url = moonetixMavenUrl
+            content {
+                includeGroup("com.moonetix")
+            }
+        }
+    }
+}
+
+apply plugin: "com.android.library"
+
+if (isNewArchitectureEnabled()) {
+    apply plugin: "com.facebook.react"
+}
+
+android {
+    namespace = "com.moonetix.offerwall.reactnative"
+    compileSdk = safeExtGet("compileSdkVersion", 36) as int
+
+    defaultConfig {
+        minSdk = safeExtGet("minSdkVersion", 24) as int
+    }
+
+    buildFeatures {
+        buildConfig = false
+    }
+
+    sourceSets {
+        main {
+            if (isNewArchitectureEnabled()) {
+                java.srcDirs += ["src/newarch/java"]
+            } else {
+                java.srcDirs += ["src/oldarch/java"]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.facebook.react:react-android"
+    implementation "com.moonetix:offerwall:2.0.1"
+}
