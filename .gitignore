@@ -1,0 +1,12 @@
+node_modules/
+# Build output: npm run build writes lib/
+lib/
+*.tgz
+# The iOS SDK binary is downloaded by scripts/fetch-ios-sdk.sh
+ios/Frameworks/
+android/build/
+android/.gradle/
+android/.cxx/
+.env
+.DS_Store
+.idea/

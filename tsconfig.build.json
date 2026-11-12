@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "declaration": true,
+    "sourceMap": false,
+    "removeComments": false,
+    "types": []
+  },
+  "include": ["src"]
+}
