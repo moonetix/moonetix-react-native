@@ -57,7 +57,7 @@
   "devDependencies": {
     "@babel/core": "7.29.7",
     "@babel/preset-env": "7.29.7",
-    "@babel/preset-typescript": "7.29.7",
+    "@babel/preset-typescript": "8.0.7",
     "@react-native/codegen": "0.88.0",
     "@types/jest": "30.0.0",
     "@types/node": "22.20.5",
