@@ -5,9 +5,12 @@ updates:
     schedule:
       interval: monthly
     ignore:
+      # The type definitions follow the Node version CI runs on.
       - dependency-name: '@types/node'
         update-types:
           - version-update:semver-major
+      # Jest 30 and React Native 0.88 still load Babel 7 internally. Babel 8 on top
+      # leaves two Babel majors in one tree, so it waits until they move.
       - dependency-name: '@babel/*'
         update-types:
           - version-update:semver-major
