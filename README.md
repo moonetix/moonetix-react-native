@@ -239,6 +239,7 @@ All on [github.com/moonetix](https://github.com/moonetix).
 - [moonetix-android-sdk](https://github.com/moonetix/moonetix-android-sdk): Android SDK source (Kotlin and Java)
 - [moonetix-ios-sdk](https://github.com/moonetix/moonetix-ios-sdk): iOS SDK install guide, SwiftUI sample and token endpoint
 - [moonetix-flutter](https://github.com/moonetix/moonetix-flutter): Flutter plugin source
+- [moonetix-unity](https://github.com/moonetix/moonetix-unity): Unity plugin source
 
 **Server side**
 
