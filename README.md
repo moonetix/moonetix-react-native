@@ -7,7 +7,6 @@
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
 [![npm](https://img.shields.io/badge/npm-%40moonetix%2Freact--native--offerwall%202.0.1-CB3837)](https://docs.moonetix.com/react-native-sdk#install)
 [![Docs](https://img.shields.io/badge/docs-docs.moonetix.com-004ABB)](https://docs.moonetix.com/react-native-sdk)
-[![Get keys](https://img.shields.io/badge/get%20keys-moonetix.com-004ABB)](https://moonetix.com/register?from=github-moonetix-react-native)
 [![React Native 0.77+](https://img.shields.io/badge/React%20Native-0.77%2B-61DAFB)](https://moonetix.com/integrations/react-native)
 [![TypeScript](https://img.shields.io/badge/types-TypeScript-3178C6)](src/index.ts)
 
@@ -15,7 +14,7 @@ This is the source of `@moonetix/react-native-offerwall` for [Moonetix](https://
 
 The source is the released 2.0.1 package. Install it from the Moonetix npm registry; this repository is for reading, auditing and building from source.
 
-> **Get your App ID and API key: sign up free at https://moonetix.com/register?from=github-moonetix-react-native**
+> To run it you need your Moonetix App ID and API key: see [Account](#account).
 
 ## Package at a glance
 
@@ -228,7 +227,7 @@ For error codes and fixes, see [Troubleshooting](https://docs.moonetix.com/react
 
 ## Account
 
-Sign up free at **https://moonetix.com/register?from=github-moonetix-react-native**. A person reviews each publisher application. When you are approved, add the app, set the currency name and rate, call `Moonetix.init` with the App ID, and put the API key in your server environment.
+Sign up free at https://moonetix.com/register?from=github-moonetix-react-native. A person reviews each publisher application. When you are approved, add the app, set the currency name and rate, call `Moonetix.init` with the App ID, and put the API key in your server environment.
 
 ## More Moonetix examples
 
