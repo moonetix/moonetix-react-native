@@ -1,6 +1,6 @@
 {
   "name": "@moonetix/react-native-offerwall",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Show the Moonetix offerwall in your React Native or Expo app. Your server creates a single-use session, and the package opens the native Moonetix Android and iOS SDK with it. No key ships inside your app.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -39,6 +39,10 @@
     "moonetix"
   ],
   "homepage": "https://docs.moonetix.com/react-native-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonetix/moonetix-react-native.git"
+  },
   "bugs": {
     "url": "https://moonetix.com/contact"
   },

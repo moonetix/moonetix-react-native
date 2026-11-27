@@ -5,14 +5,14 @@
 [![CI](https://github.com/moonetix/moonetix-react-native/actions/workflows/ci.yml/badge.svg)](https://github.com/moonetix/moonetix-react-native/actions/workflows/ci.yml)
 [![Maintained by Moonetix](https://img.shields.io/badge/maintained%20by-Moonetix-004ABB)](https://moonetix.com)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
-[![npm](https://img.shields.io/badge/npm-%40moonetix%2Freact--native--offerwall%202.0.1-CB3837)](https://docs.moonetix.com/react-native-sdk#install)
+[![npm](https://img.shields.io/npm/v/@moonetix/react-native-offerwall?color=CB3837)](https://www.npmjs.com/package/@moonetix/react-native-offerwall)
 [![Docs](https://img.shields.io/badge/docs-docs.moonetix.com-004ABB)](https://docs.moonetix.com/react-native-sdk)
 [![React Native 0.77+](https://img.shields.io/badge/React%20Native-0.77%2B-61DAFB)](https://moonetix.com/integrations/react-native)
 [![TypeScript](https://img.shields.io/badge/types-TypeScript-3178C6)](src/index.ts)
 
 This is the source of `@moonetix/react-native-offerwall` for [Moonetix](https://moonetix.com). The package is a TurboModule on top of the native Moonetix Android and iOS SDKs, with an Expo config plugin: the offerwall opens in a locked-down native screen, offer links go to the store or the browser, and a few events come back to your JavaScript. Moonetix is an affiliate network: your users earn your own currency by completing offers, and you earn per completed offer.
 
-The source is the released 2.0.1 package. Install it from the Moonetix npm registry; this repository is for reading, auditing and building from source.
+The source is the released 2.0.2 package. Install it from [npm](https://www.npmjs.com/package/@moonetix/react-native-offerwall); this repository is for reading, auditing and building from source.
 
 > To run it you need your Moonetix App ID and API key: see [Account](#account).
 
@@ -23,7 +23,7 @@ The source is the released 2.0.1 package. Install it from the Moonetix npm regis
 | **Architectures** | TurboModule for the New Architecture. Also runs on the old architecture (React Native 0.77 to 0.81). |
 | **Expo** | Config plugin for `expo prebuild` and EAS Build. Expo Go cannot load it. |
 | **Keys** | None in the app. It only holds a session token that works once and expires after 10 minutes. |
-| **Build** | `npm run build` produces a `lib/` that is byte for byte the one in the published 2.0.1 package. TypeScript `strict`, Jest tests for the API, validation and the Expo plugin. |
+| **Build** | `npm run build` produces a `lib/` that is byte for byte the one in the published 2.0.2 package. TypeScript `strict`, Jest tests for the API, validation and the Expo plugin. |
 
 ## Sequence
 
@@ -51,13 +51,7 @@ sequenceDiagram
 
 ### 1. Install
 
-React Native 0.77 or newer, or Expo SDK 53 or newer. Your Android project needs Kotlin 2.0 or newer, which these versions use by default. The package is in the Moonetix npm registry. Add the registry for the `@moonetix` scope to the `.npmrc` file next to your `package.json`:
-
-```
-@moonetix:registry=https://moonetix.com/npm/
-```
-
-Then install the package and rebuild your app:
+React Native 0.77 or newer, or Expo SDK 53 or newer. Your Android project needs Kotlin 2.0 or newer, which these versions use by default. Install the package and rebuild your app:
 
 ```bash
 npm install @moonetix/react-native-offerwall
@@ -65,14 +59,6 @@ npm install @moonetix/react-native-offerwall
 yarn add @moonetix/react-native-offerwall
 # Expo
 npx expo install @moonetix/react-native-offerwall
-```
-
-npm, Yarn 1 and pnpm read `.npmrc`. With Yarn 2 or newer, add the scope to `.yarnrc.yml` instead:
-
-```yaml
-npmScopes:
-  moonetix:
-    npmRegistryServer: "https://moonetix.com/npm"
 ```
 
 Prefer a file? Download [moonetix-react-native-offerwall-2.0.1.tgz](https://moonetix.com/downloads/moonetix-react-native-offerwall-2.0.1.tgz) and run `npm install ./moonetix-react-native-offerwall-2.0.1.tgz`.

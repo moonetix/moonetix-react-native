@@ -25,7 +25,7 @@ declare const require: (id: string) => unknown;
 
 type AnyListener = (error?: MoonetixError) => void;
 
-const VERSION = '2.0.1';
+const VERSION = '2.0.2';
 const EVENT_NAMES: readonly MoonetixEventName[] = ['opened', 'closed', 'error'];
 
 let appId: string | null = null;
